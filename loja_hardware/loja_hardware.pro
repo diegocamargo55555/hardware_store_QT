@@ -18,6 +18,7 @@ SOURCES += \
 
 HEADERS += \
     cpu_window.h \
+    data.h \
     fonte_window.h \
     gpu_window.h \
     mainwindow.h \
