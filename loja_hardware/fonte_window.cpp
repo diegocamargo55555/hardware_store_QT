@@ -12,3 +12,5 @@ fonte_window::~fonte_window()
 {
     delete ui;
 }
+
+

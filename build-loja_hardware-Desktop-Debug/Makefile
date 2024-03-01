@@ -389,6 +389,7 @@ DIST          = /home/diego/Qt/6.6.1/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/diego/Qt/6.6.1/gcc_64/mkspecs/features/yacc.prf \
 		/home/diego/Qt/6.6.1/gcc_64/mkspecs/features/lex.prf \
 		../loja_hardware/loja_hardware.pro ../loja_hardware/cpu_window.h \
+		../loja_hardware/data.h \
 		../loja_hardware/fonte_window.h \
 		../loja_hardware/gpu_window.h \
 		../loja_hardware/mainwindow.h \
@@ -1063,7 +1064,7 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /home/diego/Qt/6.6.1/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../loja_hardware/cpu_window.h ../loja_hardware/fonte_window.h ../loja_hardware/gpu_window.h ../loja_hardware/mainwindow.h ../loja_hardware/placa_mae_window.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../loja_hardware/cpu_window.h ../loja_hardware/data.h ../loja_hardware/fonte_window.h ../loja_hardware/gpu_window.h ../loja_hardware/mainwindow.h ../loja_hardware/placa_mae_window.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../loja_hardware/cpu_window.cpp ../loja_hardware/fonte_window.cpp ../loja_hardware/gpu_window.cpp ../loja_hardware/main.cpp ../loja_hardware/mainwindow.cpp ../loja_hardware/placa_mae_window.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../loja_hardware/cpu_window.ui ../loja_hardware/fonte_window.ui ../loja_hardware/gpu_window.ui ../loja_hardware/mainwindow.ui ../loja_hardware/placa_mae_window.ui $(DISTDIR)/
 
@@ -2164,7 +2165,8 @@ cpu_window.o: ../loja_hardware/cpu_window.cpp ../loja_hardware/cpu_window.h \
 		/home/diego/Qt/6.6.1/gcc_64/include/QtWidgets/qlabel.h \
 		/home/diego/Qt/6.6.1/gcc_64/include/QtWidgets/qframe.h \
 		/home/diego/Qt/6.6.1/gcc_64/include/QtGui/qpicture.h \
-		/home/diego/Qt/6.6.1/gcc_64/include/QtGui/qtextdocument.h
+		/home/diego/Qt/6.6.1/gcc_64/include/QtGui/qtextdocument.h \
+		../loja_hardware/data.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o cpu_window.o ../loja_hardware/cpu_window.cpp
 
 fonte_window.o: ../loja_hardware/fonte_window.cpp ../loja_hardware/fonte_window.h \
@@ -2330,7 +2332,35 @@ fonte_window.o: ../loja_hardware/fonte_window.cpp ../loja_hardware/fonte_window.
 		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/QSizeF \
 		/home/diego/Qt/6.6.1/gcc_64/include/QtGui/QTransform \
 		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qnativeinterface.h \
-		ui_fonte_window.h
+		ui_fonte_window.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/QVariant \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtWidgets/QApplication \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtWidgets/qapplication.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qeventloop.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qcoreapplication_platform.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qfuture.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qfutureinterface.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qmutex.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qdeadlinetimer.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qelapsedtimer.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qtsan_impl.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qresultstore.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qfuture_impl.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qthreadpool.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qthread.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qrunnable.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qexception.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qpromise.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtGui/qguiapplication.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtGui/qinputmethod.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qlocale.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtGui/qguiapplication_platform.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtWidgets/QLabel \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtWidgets/qlabel.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtWidgets/qframe.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtGui/qpicture.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtGui/qtextdocument.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o fonte_window.o ../loja_hardware/fonte_window.cpp
 
 gpu_window.o: ../loja_hardware/gpu_window.cpp ../loja_hardware/gpu_window.h \
@@ -2496,7 +2526,35 @@ gpu_window.o: ../loja_hardware/gpu_window.cpp ../loja_hardware/gpu_window.h \
 		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/QSizeF \
 		/home/diego/Qt/6.6.1/gcc_64/include/QtGui/QTransform \
 		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qnativeinterface.h \
-		ui_gpu_window.h
+		ui_gpu_window.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/QVariant \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtWidgets/QApplication \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtWidgets/qapplication.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qeventloop.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qcoreapplication_platform.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qfuture.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qfutureinterface.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qmutex.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qdeadlinetimer.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qelapsedtimer.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qtsan_impl.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qresultstore.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qfuture_impl.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qthreadpool.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qthread.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qrunnable.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qexception.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qpromise.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtGui/qguiapplication.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtGui/qinputmethod.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qlocale.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtGui/qguiapplication_platform.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtWidgets/QLabel \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtWidgets/qlabel.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtWidgets/qframe.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtGui/qpicture.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtGui/qtextdocument.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gpu_window.o ../loja_hardware/gpu_window.cpp
 
 main.o: ../loja_hardware/main.cpp ../loja_hardware/mainwindow.h \
@@ -3054,7 +3112,35 @@ placa_mae_window.o: ../loja_hardware/placa_mae_window.cpp ../loja_hardware/placa
 		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/QSizeF \
 		/home/diego/Qt/6.6.1/gcc_64/include/QtGui/QTransform \
 		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qnativeinterface.h \
-		ui_placa_mae_window.h
+		ui_placa_mae_window.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/QVariant \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtWidgets/QApplication \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtWidgets/qapplication.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qeventloop.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qcoreapplication_platform.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qfuture.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qfutureinterface.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qmutex.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qdeadlinetimer.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qelapsedtimer.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qtsan_impl.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qresultstore.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qfuture_impl.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qthreadpool.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qthread.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qrunnable.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qexception.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qpromise.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtGui/qguiapplication.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtGui/qinputmethod.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qlocale.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtGui/qguiapplication_platform.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtWidgets/QLabel \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtWidgets/qlabel.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtWidgets/qframe.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtGui/qpicture.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtGui/qtextdocument.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o placa_mae_window.o ../loja_hardware/placa_mae_window.cpp
 
 moc_cpu_window.o: moc_cpu_window.cpp 
