@@ -3,14 +3,21 @@
 #include <QDialog>
 #include <QFile>
 using namespace std;
-struct lista_processadores
-{
-    int price;
-    QString name;
 
+extern int carrinho = 0;
+extern QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
+
+
+
+struct lista_de_produtos
+{
+    float price;
+    QString name;
 };
+
+
 //
-void bubble_sort_crescente(lista_processadores a[], int total, QVector< QVector< QPixmap > > &image_array)
+void bubble_sort_crescente(lista_de_produtos a[], int total, QVector< QVector< QPixmap > > &image_array)
 {
     int tpm = 0;
     QString tpm_name ="";

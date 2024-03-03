@@ -15,6 +15,9 @@ public:
     explicit cpu_window(QWidget *parent = nullptr);
     ~cpu_window();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::cpu_window *ui;
 };
