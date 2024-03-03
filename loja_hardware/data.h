@@ -1,6 +1,5 @@
 #ifndef DATA_H
 #define DATA_H
-#include <iostream>
 #include <QDialog>
 
 using namespace std;
@@ -11,15 +10,11 @@ struct lista_processadores
 
 };
 
-void processador_nome(){
-    lista_processadores processores[3];
-    processores[0].price = 55;
-    processores[1].price = 69;
-    processores[2].price = 88;
-
-    processores[0].name = "ryzen 5";
+void bubble_sort(lista_processadores a[], int total)
+{
 
 }
+
 
 
 
