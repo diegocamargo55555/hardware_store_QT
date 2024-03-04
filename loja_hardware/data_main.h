@@ -1,11 +1,5 @@
-#ifndef DATA_H
-#define DATA_H
 #include <QDialog>
 #include <QFile>
-
-extern int carrinho = 0;
-extern QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
-
 
 
 struct lista_de_produtos
@@ -14,9 +8,7 @@ struct lista_de_produtos
     QString name;
 };
 
-
-//
-void bubble_sort_crescente(lista_de_produtos a[], int total, QVector< QVector< QPixmap > > &image_array)
+void bubble_crescente(lista_de_produtos a[], int total, QVector< QVector< QPixmap > > &image_array)
 {
     int tpm = 0;
     QString tpm_name ="";
@@ -48,12 +40,3 @@ void bubble_sort_crescente(lista_de_produtos a[], int total, QVector< QVector< Q
         }
     }
 }
-
-
-
-
-
-
-
-#endif // DATA_H
-
