@@ -33,12 +33,12 @@ GPU_window::GPU_window(QWidget *parent)
         pixmap_array_gpu[i].resize(10);
     }
 
-    pixmap_array_gpu[0][0] = QPixmap("/home/diego-d/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/gpu/4090.jpg");
-    pixmap_array_gpu[0][1] = QPixmap("/home/diego-d/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/gpu/4060.jpg");
-    pixmap_array_gpu[0][2] = QPixmap("/home/diego-d/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/gpu/4070.jpg");
-    pixmap_array_gpu[0][3] = QPixmap("/home/diego-d/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/gpu/7700xt.jpg");
-    pixmap_array_gpu[0][4] = QPixmap("/home/diego-d/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/gpu/7600.jpg");
-    pixmap_array_gpu[0][5] = QPixmap("/home/diego-d/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/gpu/7900xtx.jpg");
+    pixmap_array_gpu[0][0] = QPixmap("/home/diego/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/gpu/4090.jpg");
+    pixmap_array_gpu[0][1] = QPixmap("/home/diego/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/gpu/4060.jpg");
+    pixmap_array_gpu[0][2] = QPixmap("/home/diego/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/gpu/4070.jpg");
+    pixmap_array_gpu[0][3] = QPixmap("/home/diego/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/gpu/7700xt.jpg");
+    pixmap_array_gpu[0][4] = QPixmap("/home/diego/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/gpu/7600.jpg");
+    pixmap_array_gpu[0][5] = QPixmap("/home/diego/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/gpu/7900xtx.jpg");
 
     bubble_crescente(gpu_lista, 6, pixmap_array_gpu);
 

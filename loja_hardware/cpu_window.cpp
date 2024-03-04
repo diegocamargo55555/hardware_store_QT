@@ -38,15 +38,15 @@ cpu_window::cpu_window(QWidget *parent)
     {
         pixmap_array[i].resize(10);
     }
-    pixmap_array[0][0] = QPixmap("/home/diego-d/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/processadores/i9.jpg");
-    pixmap_array[0][1] = QPixmap("/home/diego-d/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/processadores/i7.jpg");
-    pixmap_array[0][2] = QPixmap("/home/diego-d/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/processadores/i5.jpg");
-    pixmap_array[0][3] = QPixmap("/home/diego-d/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/processadores/i3.jpg");
-    pixmap_array[0][4] = QPixmap("/home/diego-d/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/processadores/ryzen 7.jpg");
-    pixmap_array[0][5] = QPixmap("/home/diego-d/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/processadores/ryzen9 7950x3d.jpg");
-    pixmap_array[0][6] = QPixmap("/home/diego-d/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/processadores/RYZEN 9 7900X3D.jpg");
-    pixmap_array[0][7] = QPixmap("/home/diego-d/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/processadores/RYZEN 5 7600X.jpg");
-    pixmap_array[0][8] = QPixmap("/home/diego-d/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/processadores/THREADRIPPER.jpg");
+    pixmap_array[0][0] = QPixmap("/home/diego/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/processadores/i9.jpg");
+    pixmap_array[0][1] = QPixmap("/home/diego/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/processadores/i7.jpg");
+    pixmap_array[0][2] = QPixmap("/home/diego/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/processadores/i5.jpg");
+    pixmap_array[0][3] = QPixmap("/home/diego/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/processadores/i3.jpg");
+    pixmap_array[0][4] = QPixmap("/home/diego/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/processadores/ryzen 7.jpg");
+    pixmap_array[0][5] = QPixmap("/home/diego/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/processadores/ryzen9 7950x3d.jpg");
+    pixmap_array[0][6] = QPixmap("/home/diego/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/processadores/RYZEN 9 7900X3D.jpg");
+    pixmap_array[0][7] = QPixmap("/home/diego/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/processadores/RYZEN 5 7600X.jpg");
+    pixmap_array[0][8] = QPixmap("/home/diego/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/processadores/THREADRIPPER.jpg");
 
     bubble_sort_decrescente(processores_list, 9, pixmap_array);
 
