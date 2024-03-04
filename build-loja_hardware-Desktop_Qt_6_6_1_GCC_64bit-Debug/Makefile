@@ -231,9 +231,11 @@ DIST          = /home/diego-d/Qt/6.6.1/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/diego-d/Qt/6.6.1/gcc_64/mkspecs/features/lex.prf \
 		../loja_hardware/loja_hardware.pro ../loja_hardware/cpu_window.h \
 		../loja_hardware/data.h \
+		../loja_hardware/data_main.h \
 		../loja_hardware/fonte_window.h \
 		../loja_hardware/gpu_window.h \
 		../loja_hardware/mainwindow.h \
+		../loja_hardware/ordem.h \
 		../loja_hardware/placa_mae_window.h ../loja_hardware/cpu_window.cpp \
 		../loja_hardware/fonte_window.cpp \
 		../loja_hardware/gpu_window.cpp \
@@ -587,7 +589,7 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /home/diego-d/Qt/6.6.1/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../loja_hardware/cpu_window.h ../loja_hardware/data.h ../loja_hardware/fonte_window.h ../loja_hardware/gpu_window.h ../loja_hardware/mainwindow.h ../loja_hardware/placa_mae_window.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../loja_hardware/cpu_window.h ../loja_hardware/data.h ../loja_hardware/data_main.h ../loja_hardware/fonte_window.h ../loja_hardware/gpu_window.h ../loja_hardware/mainwindow.h ../loja_hardware/ordem.h ../loja_hardware/placa_mae_window.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../loja_hardware/cpu_window.cpp ../loja_hardware/fonte_window.cpp ../loja_hardware/gpu_window.cpp ../loja_hardware/main.cpp ../loja_hardware/mainwindow.cpp ../loja_hardware/placa_mae_window.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../loja_hardware/cpu_window.ui ../loja_hardware/fonte_window.ui ../loja_hardware/gpu_window.ui ../loja_hardware/mainwindow.ui ../loja_hardware/placa_mae_window.ui $(DISTDIR)/
 
@@ -1889,12 +1891,18 @@ fonte_window.o: ../loja_hardware/fonte_window.cpp ../loja_hardware/fonte_window.
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtWidgets/qlabel.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtWidgets/qframe.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qpicture.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qtextdocument.h
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qtextdocument.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtWidgets/QPushButton \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../loja_hardware/data_main.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/QFile \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qfile.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qfiledevice.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o fonte_window.o ../loja_hardware/fonte_window.cpp
 
-gpu_window.o: ../loja_hardware/gpu_window.cpp ../loja_hardware/gpu_window.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtWidgets/QDialog \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtWidgets/qdialog.h \
+gpu_window.o: ../loja_hardware/gpu_window.cpp /home/diego-d/Qt/6.6.1/gcc_64/include/QtWidgets/QApplication \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtWidgets/qapplication.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qtguiglobal.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qglobal.h \
@@ -1944,19 +1952,14 @@ gpu_window.o: ../loja_hardware/gpu_window.cpp ../loja_hardware/gpu_window.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qtguiexports.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtWidgets/qtwidgets-config.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtWidgets/qtwidgetsexports.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtWidgets/qwidget.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qwindowdefs.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qobjectdefs.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qnamespace.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qtmetamacros.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qfunctionaltools_impl.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qobject.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qcoreapplication.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qstring.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qchar.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qstringview.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qbytearray.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qrefcount.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qnamespace.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qtmetamacros.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qarraydata.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qpair.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qarraydatapointer.h \
@@ -1976,6 +1979,12 @@ gpu_window.o: ../loja_hardware/gpu_window.cpp ../loja_hardware/gpu_window.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qutf8stringview.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qstringtokenizer.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qcoreevent.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qfunctionaltools_impl.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qeventloop.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qobject.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qlist.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qhashfunctions.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qiterator.h \
@@ -1983,7 +1992,6 @@ gpu_window.o: ../loja_hardware/gpu_window.cpp ../loja_hardware/gpu_window.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qstringlist.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qalgorithms.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qstringmatcher.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qcoreevent.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qscopedpointer.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qmetatype.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qcompare.h \
@@ -1998,69 +2006,19 @@ gpu_window.o: ../loja_hardware/gpu_window.cpp ../loja_hardware/gpu_window.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qscopeguard.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qobject_impl.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qbindingstorage.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qmargins.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/q23utility.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qaction.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qkeysequence.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qicon.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qsize.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qpixmap.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qpaintdevice.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qrect.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qpoint.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qcolor.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qrgb.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qrgba64.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qshareddata.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qimage.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qpixelformat.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qtransform.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qpolygon.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qregion.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qline.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qvariant.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qnativeinterface.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qdebug.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qtextstream.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qstringconverter_base.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qcontiguouscache.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qshareddata.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qsharedpointer_impl.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qmap.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qshareddata_impl.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qset.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qhash.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qvarlengtharray.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qpalette.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qbrush.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qfont.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qfontmetrics.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qfontinfo.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtWidgets/qsizepolicy.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qcursor.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qbitmap.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qevent.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qiodevice.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qpointer.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qurl.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qeventpoint.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qvector2d.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qvectornd.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qpointingdevice.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qinputdevice.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qscreen.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/QList \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/QObject \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/QRect \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/QSize \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/QSizeF \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/QTransform \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qnativeinterface.h \
-		ui_gpu_window.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/QVariant \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtWidgets/QApplication \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtWidgets/qapplication.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qcoreapplication.h \
-		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qeventloop.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qcoreapplication_platform.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qfuture.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qfutureinterface.h \
@@ -2074,11 +2032,65 @@ gpu_window.o: ../loja_hardware/gpu_window.cpp ../loja_hardware/gpu_window.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qthread.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qrunnable.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qexception.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qpointer.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qpromise.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qvariant.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/q23utility.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qpoint.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qsize.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qmargins.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qcursor.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qbitmap.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qpixmap.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qrect.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qcolor.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qrgb.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qrgba64.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qimage.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qpixelformat.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qtransform.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qpolygon.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qregion.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qline.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qguiapplication.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qinputmethod.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qlocale.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qguiapplication_platform.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/QFile \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qfile.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qfiledevice.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qiodevice.h \
+		../loja_hardware/gpu_window.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtWidgets/QDialog \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtWidgets/qdialog.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtWidgets/qwidget.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qaction.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qkeysequence.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qicon.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qpalette.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qbrush.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qfont.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qfontinfo.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qevent.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/qurl.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qeventpoint.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qvector2d.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qvectornd.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qpointingdevice.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qinputdevice.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/qscreen.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/QList \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/QObject \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/QRect \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/QSize \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/QSizeF \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtGui/QTransform \
+		ui_gpu_window.h \
+		/home/diego-d/Qt/6.6.1/gcc_64/include/QtCore/QVariant \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtWidgets/QLabel \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtWidgets/qlabel.h \
 		/home/diego-d/Qt/6.6.1/gcc_64/include/QtWidgets/qframe.h \

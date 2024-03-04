@@ -19,9 +19,11 @@ SOURCES += \
 HEADERS += \
     cpu_window.h \
     data.h \
+    data_main.h \
     fonte_window.h \
     gpu_window.h \
     mainwindow.h \
+    ordem.h \
     placa_mae_window.h
 
 FORMS += \

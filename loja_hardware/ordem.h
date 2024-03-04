@@ -1,8 +1,8 @@
+#ifndef ORDEM_H
+#define ORDEM_H
 #include <QDialog>
 #include <QFile>
 #include <QApplication>
-
-
 
 struct lista_de_produtos
 {
@@ -10,7 +10,8 @@ struct lista_de_produtos
     QString name;
 };
 
-void bubble_decrescente(lista_de_produtos a[], int total, QVector< QVector< QPixmap > > &image_array)
+
+void bubble_crescente(lista_de_produtos a[], int total, QVector< QVector< QPixmap > > &image_array)
 {
     int tpm = 0;
     QString tpm_name ="";
@@ -42,3 +43,5 @@ void bubble_decrescente(lista_de_produtos a[], int total, QVector< QVector< QPix
         }
     }
 }
+
+#endif // ORDEM_H

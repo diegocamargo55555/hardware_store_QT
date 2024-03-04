@@ -3,8 +3,6 @@
 #include "data_main.h"
 #include <QFile>
 
-
-
 fonte_window::fonte_window(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::fonte_window)
@@ -34,7 +32,7 @@ fonte_window::fonte_window(QWidget *parent)
     pixmap_array_fonte[0][2] = QPixmap("/home/diego-d/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/fontes/AEROCOOL KCAS FULL RANGE, 700W.jpg");
     pixmap_array_fonte[0][3] = QPixmap("/home/diego-d/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/fontes/GAMDIAS HELIOS P2-850G, 850W.jpg");
 
-    bubble_crescente(fontes, 4, pixmap_array_fonte);
+    bubble_decrescente(fontes, 4, pixmap_array_fonte);
 
     QIcon ButtonIconfonte(pixmap_array_fonte[0][0]);
     ui->pushButton_fontes->setIcon(ButtonIconfonte);
@@ -61,17 +59,6 @@ fonte_window::fonte_window(QWidget *parent)
     ui->label_2->setText(text[1]);
     ui->label_3->setText(text[2]);
     ui->label_4->setText(text[3]);
-
-
-
-
-
-
-
-
-
-
-
 
 }
 
