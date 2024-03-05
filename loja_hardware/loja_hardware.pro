@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     cpu_window.cpp \
     fonte_window.cpp \
+    global.cpp \
     gpu_window.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -22,6 +23,7 @@ HEADERS += \
     data_main.h \
     data_placa.h \
     fonte_window.h \
+    global.h \
     gpu_window.h \
     mainwindow.h \
     ordem.h \

@@ -15,6 +15,9 @@ public:
     explicit fonte_window(QWidget *parent = nullptr);
     ~fonte_window();
 
+private slots:
+    void on_pushButton_fontes_clicked();
+
 private:
     Ui::fonte_window *ui;
 };

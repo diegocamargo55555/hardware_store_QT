@@ -5,19 +5,12 @@
 #include <QApplication>
 
 
-extern int carrinho = 0;
-extern QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
-
-
-
 struct lista_de_produtos
 {
     float price;
     QString name;
 };
 
-
-//
 void bubble_sort_decrescente(lista_de_produtos a[], int total, QVector< QVector< QPixmap > > &image_array)
 {
     int tpm = 0;

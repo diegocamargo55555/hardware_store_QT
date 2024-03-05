@@ -54,6 +54,7 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../loja_hardware/cpu_window.cpp \
 		../loja_hardware/fonte_window.cpp \
+		../loja_hardware/global.cpp \
 		../loja_hardware/gpu_window.cpp \
 		../loja_hardware/main.cpp \
 		../loja_hardware/mainwindow.cpp \
@@ -64,6 +65,7 @@ SOURCES       = ../loja_hardware/cpu_window.cpp \
 		moc_placa_mae_window.cpp
 OBJECTS       = cpu_window.o \
 		fonte_window.o \
+		global.o \
 		gpu_window.o \
 		main.o \
 		mainwindow.o \
@@ -393,11 +395,13 @@ DIST          = /home/diego/Qt/6.6.1/gcc_64/mkspecs/features/spec_pre.prf \
 		../loja_hardware/data_main.h \
 		../loja_hardware/data_placa.h \
 		../loja_hardware/fonte_window.h \
+		../loja_hardware/global.h \
 		../loja_hardware/gpu_window.h \
 		../loja_hardware/mainwindow.h \
 		../loja_hardware/ordem.h \
 		../loja_hardware/placa_mae_window.h ../loja_hardware/cpu_window.cpp \
 		../loja_hardware/fonte_window.cpp \
+		../loja_hardware/global.cpp \
 		../loja_hardware/gpu_window.cpp \
 		../loja_hardware/main.cpp \
 		../loja_hardware/mainwindow.cpp \
@@ -1067,8 +1071,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /home/diego/Qt/6.6.1/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../loja_hardware/cpu_window.h ../loja_hardware/data.h ../loja_hardware/data_main.h ../loja_hardware/data_placa.h ../loja_hardware/fonte_window.h ../loja_hardware/gpu_window.h ../loja_hardware/mainwindow.h ../loja_hardware/ordem.h ../loja_hardware/placa_mae_window.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../loja_hardware/cpu_window.cpp ../loja_hardware/fonte_window.cpp ../loja_hardware/gpu_window.cpp ../loja_hardware/main.cpp ../loja_hardware/mainwindow.cpp ../loja_hardware/placa_mae_window.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../loja_hardware/cpu_window.h ../loja_hardware/data.h ../loja_hardware/data_main.h ../loja_hardware/data_placa.h ../loja_hardware/fonte_window.h ../loja_hardware/global.h ../loja_hardware/gpu_window.h ../loja_hardware/mainwindow.h ../loja_hardware/ordem.h ../loja_hardware/placa_mae_window.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../loja_hardware/cpu_window.cpp ../loja_hardware/fonte_window.cpp ../loja_hardware/global.cpp ../loja_hardware/gpu_window.cpp ../loja_hardware/main.cpp ../loja_hardware/mainwindow.cpp ../loja_hardware/placa_mae_window.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../loja_hardware/cpu_window.ui ../loja_hardware/fonte_window.ui ../loja_hardware/gpu_window.ui ../loja_hardware/mainwindow.ui ../loja_hardware/placa_mae_window.ui $(DISTDIR)/
 
 
@@ -2175,7 +2179,8 @@ cpu_window.o: ../loja_hardware/cpu_window.cpp ../loja_hardware/cpu_window.h \
 		../loja_hardware/data.h \
 		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/QFile \
 		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qfile.h \
-		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qfiledevice.h
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qfiledevice.h \
+		../loja_hardware/global.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o cpu_window.o ../loja_hardware/cpu_window.cpp
 
 fonte_window.o: ../loja_hardware/fonte_window.cpp ../loja_hardware/fonte_window.h \
@@ -2376,8 +2381,12 @@ fonte_window.o: ../loja_hardware/fonte_window.cpp ../loja_hardware/fonte_window.
 		../loja_hardware/data_main.h \
 		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/QFile \
 		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qfile.h \
-		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qfiledevice.h
+		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qfiledevice.h \
+		../loja_hardware/global.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o fonte_window.o ../loja_hardware/fonte_window.cpp
+
+global.o: ../loja_hardware/global.cpp ../loja_hardware/global.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o global.o ../loja_hardware/global.cpp
 
 gpu_window.o: ../loja_hardware/gpu_window.cpp /home/diego/Qt/6.6.1/gcc_64/include/QtCore/QFile \
 		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qfile.h \
@@ -3164,6 +3173,9 @@ placa_mae_window.o: ../loja_hardware/placa_mae_window.cpp ../loja_hardware/placa
 		/home/diego/Qt/6.6.1/gcc_64/include/QtWidgets/qframe.h \
 		/home/diego/Qt/6.6.1/gcc_64/include/QtGui/qpicture.h \
 		/home/diego/Qt/6.6.1/gcc_64/include/QtGui/qtextdocument.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtWidgets/QPushButton \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/diego/Qt/6.6.1/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../loja_hardware/data_placa.h \
 		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/QFile \
 		/home/diego/Qt/6.6.1/gcc_64/include/QtCore/qfile.h \

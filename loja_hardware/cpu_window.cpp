@@ -1,7 +1,10 @@
 #include "cpu_window.h"
 #include "ui_cpu_window.h"
 #include "data.h"
+#include "global.h"
 #include <QFile>
+
+lista_de_produtos processores_list[9];
 
 cpu_window::cpu_window(QWidget *parent)
     : QDialog(parent)
@@ -9,7 +12,7 @@ cpu_window::cpu_window(QWidget *parent)
 {
     ui->setupUi(this);
 
-    lista_de_produtos processores_list[9];
+    ;
 
     processores_list[0].price = 3749.99;
     processores_list[1].price = 2899.99;
@@ -86,8 +89,6 @@ cpu_window::cpu_window(QWidget *parent)
     ui->pushButton_9->setIcon(ButtonIcon9);
     ui->pushButton_9->setIconSize(QSize(241,241));
 
-
-
     QStringList text;
 
     for (int i = 0; i < 9; i++) {
@@ -113,7 +114,64 @@ cpu_window::~cpu_window()
 
 void cpu_window::on_pushButton_clicked()
 {
-    //carrinho += processores_list[0].price;
-    //ui->label_carrinho->setText(carrinho_text);
+    carrinho += processores_list[0].price;
+    QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
+    ui->label_carrinho->setText(carrinho_text);
+}
+
+void cpu_window::on_pushButton_2_clicked()
+{
+    carrinho += processores_list[1].price;
+    QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
+    ui->label_carrinho->setText(carrinho_text);
+}
+
+void cpu_window::on_pushButton_3_clicked()
+{
+    carrinho += processores_list[2].price;
+    QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
+    ui->label_carrinho->setText(carrinho_text);
+}
+
+void cpu_window::on_pushButton_4_clicked()
+{
+    carrinho += processores_list[3].price;
+    QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
+    ui->label_carrinho->setText(carrinho_text);
+}
+
+void cpu_window::on_pushButton_5_clicked()
+{
+    carrinho += processores_list[4].price;
+    QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
+    ui->label_carrinho->setText(carrinho_text);
+}
+
+void cpu_window::on_pushButton_6_clicked()
+{
+    carrinho += processores_list[5].price;
+    QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
+    ui->label_carrinho->setText(carrinho_text);
+}
+
+void cpu_window::on_pushButton_7_clicked()
+{
+    carrinho += processores_list[6].price;
+    QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
+    ui->label_carrinho->setText(carrinho_text);
+}
+
+void cpu_window::on_pushButton_8_clicked()
+{
+    carrinho += processores_list[7].price;
+    QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
+    ui->label_carrinho->setText(carrinho_text);
+}
+
+void cpu_window::on_pushButton_9_clicked()
+{
+    carrinho += processores_list[8].price;
+    QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
+    ui->label_carrinho->setText(carrinho_text);
 }
 

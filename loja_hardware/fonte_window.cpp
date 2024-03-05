@@ -1,7 +1,13 @@
 #include "fonte_window.h"
 #include "ui_fonte_window.h"
 #include "data_main.h"
+#include "global.h"
 #include <QFile>
+
+
+
+lista_de_produtos fontes[4];
+
 
 fonte_window::fonte_window(QWidget *parent)
     : QDialog(parent)
@@ -9,7 +15,6 @@ fonte_window::fonte_window(QWidget *parent)
 {
     ui->setupUi(this);
 
-    lista_de_produtos fontes[4];
 
     fontes[0].price =249.99;
     fontes[1].price =1529.99;
@@ -67,4 +72,12 @@ fonte_window::~fonte_window()
     delete ui;
 }
 
+
+
+void fonte_window::on_pushButton_fontes_clicked()
+{
+    carrinho += fontes[0].price;
+    QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
+    ui->label_carrinho->setText(carrinho_text);
+}
 
