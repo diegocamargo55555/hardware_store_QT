@@ -15,6 +15,15 @@ public:
     explicit placa_mae_window(QWidget *parent = nullptr);
     ~placa_mae_window();
 
+private slots:
+    void on_pushButton_placa_mae_clicked();
+
+    void on_pushButton_placa_mae_2_clicked();
+
+    void on_pushButton_placa_mae_3_clicked();
+
+    void on_pushButton_placa_mae_4_clicked();
+
 private:
     Ui::placa_mae_window *ui;
 };

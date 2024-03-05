@@ -15,6 +15,19 @@ public:
     explicit GPU_window(QWidget *parent = nullptr);
     ~GPU_window();
 
+private slots:
+    void on_pushButton_gpu_clicked();
+
+    void on_pushButton_gpu2_clicked();
+
+    void on_pushButton_gpu3_clicked();
+
+    void on_pushButton_gpu4_clicked();
+
+    void on_pushButton_gpu5_clicked();
+
+    void on_pushButton_gpu6_clicked();
+
 private:
     Ui::GPU_window *ui;
 };

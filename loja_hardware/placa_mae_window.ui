@@ -130,6 +130,19 @@
     <string>TextLabel</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_carrinho">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>0</y>
+     <width>321</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>carrinho R$ </string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

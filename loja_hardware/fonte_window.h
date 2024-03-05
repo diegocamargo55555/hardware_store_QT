@@ -18,6 +18,12 @@ public:
 private slots:
     void on_pushButton_fontes_clicked();
 
+    void on_pushButton_fontes2_clicked();
+
+    void on_pushButton_fontes3_clicked();
+
+    void on_pushButton_fontes4_clicked();
+
 private:
     Ui::fonte_window *ui;
 };

@@ -29,6 +29,7 @@ public:
     QLabel *labelplacamae_2;
     QLabel *labelplacamae_3;
     QLabel *labelplacamae_4;
+    QLabel *label_carrinho;
 
     void setupUi(QDialog *placa_mae_window)
     {
@@ -62,6 +63,9 @@ public:
         labelplacamae_4 = new QLabel(placa_mae_window);
         labelplacamae_4->setObjectName("labelplacamae_4");
         labelplacamae_4->setGeometry(QRect(800, 800, 381, 41));
+        label_carrinho = new QLabel(placa_mae_window);
+        label_carrinho->setObjectName("label_carrinho");
+        label_carrinho->setGeometry(QRect(860, 0, 321, 41));
 
         retranslateUi(placa_mae_window);
 
@@ -80,6 +84,7 @@ public:
         labelplacamae_2->setText(QCoreApplication::translate("placa_mae_window", "TextLabel", nullptr));
         labelplacamae_3->setText(QCoreApplication::translate("placa_mae_window", "TextLabel", nullptr));
         labelplacamae_4->setText(QCoreApplication::translate("placa_mae_window", "TextLabel", nullptr));
+        label_carrinho->setText(QCoreApplication::translate("placa_mae_window", "carrinho R$ ", nullptr));
     } // retranslateUi
 
 };

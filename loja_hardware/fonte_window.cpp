@@ -4,10 +4,7 @@
 #include "global.h"
 #include <QFile>
 
-
-
 lista_de_produtos fontes[4];
-
 
 fonte_window::fonte_window(QWidget *parent)
     : QDialog(parent)
@@ -64,15 +61,12 @@ fonte_window::fonte_window(QWidget *parent)
     ui->label_2->setText(text[1]);
     ui->label_3->setText(text[2]);
     ui->label_4->setText(text[3]);
-
 }
 
 fonte_window::~fonte_window()
 {
     delete ui;
 }
-
-
 
 void fonte_window::on_pushButton_fontes_clicked()
 {
@@ -81,3 +75,23 @@ void fonte_window::on_pushButton_fontes_clicked()
     ui->label_carrinho->setText(carrinho_text);
 }
 
+void fonte_window::on_pushButton_fontes2_clicked()
+{
+    carrinho += fontes[1].price;
+    QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
+    ui->label_carrinho->setText(carrinho_text);
+}
+
+void fonte_window::on_pushButton_fontes3_clicked()
+{
+    carrinho += fontes[2].price;
+    QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
+    ui->label_carrinho->setText(carrinho_text);
+}
+
+void fonte_window::on_pushButton_fontes4_clicked()
+{
+    carrinho += fontes[3].price;
+    QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
+    ui->label_carrinho->setText(carrinho_text);
+}

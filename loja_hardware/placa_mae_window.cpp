@@ -1,14 +1,15 @@
 #include "placa_mae_window.h"
 #include "ui_placa_mae_window.h"
 #include "data_placa.h"
+#include "global.h"
+
+lista_de_produtos placa_mae[4];
 
 placa_mae_window::placa_mae_window(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::placa_mae_window)
 {
     ui->setupUi(this);
-
-    lista_de_produtos placa_mae[4];
 
     placa_mae[0].price =395.99;
     placa_mae[1].price =2199.99;
@@ -60,18 +61,37 @@ placa_mae_window::placa_mae_window(QWidget *parent)
     ui->labelplacamae_2->setText(text[1]);
     ui->labelplacamae_3->setText(text[2]);
     ui->labelplacamae_4->setText(text[3]);
-
-
-
-
-
-
-
-
-
 }
 
 placa_mae_window::~placa_mae_window()
 {
     delete ui;
+}
+
+void placa_mae_window::on_pushButton_placa_mae_clicked()
+{
+    carrinho += placa_mae[0].price;
+    QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
+    ui->label_carrinho->setText(carrinho_text);
+}
+
+void placa_mae_window::on_pushButton_placa_mae_2_clicked()
+{
+    carrinho += placa_mae[1].price;
+    QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
+    ui->label_carrinho->setText(carrinho_text);
+}
+
+void placa_mae_window::on_pushButton_placa_mae_3_clicked()
+{
+    carrinho += placa_mae[2].price;
+    QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
+    ui->label_carrinho->setText(carrinho_text);
+}
+
+void placa_mae_window::on_pushButton_placa_mae_4_clicked()
+{
+    carrinho += placa_mae[3].price;
+    QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
+    ui->label_carrinho->setText(carrinho_text);
 }

@@ -2,7 +2,9 @@
 #include "gpu_window.h"
 #include "ui_gpu_window.h"
 #include "ordem.h"
+#include "global.h"
 
+lista_de_produtos gpu_lista[7];
 
 GPU_window::GPU_window(QWidget *parent)
     : QDialog(parent)
@@ -10,7 +12,6 @@ GPU_window::GPU_window(QWidget *parent)
 {
     ui->setupUi(this);
 
-    lista_de_produtos gpu_lista[7];
 
     gpu_lista[0].price = 12899.99;
     gpu_lista[1].price = 1799.99;
@@ -66,8 +67,6 @@ GPU_window::GPU_window(QWidget *parent)
     ui->pushButton_gpu6->setIcon(ButtonIcongpu5);
     ui->pushButton_gpu6->setIconSize(QSize(241,241));
 
-
-
     QStringList text;
 
     for (int i = 0; i < 7; i++) {
@@ -79,17 +78,51 @@ GPU_window::GPU_window(QWidget *parent)
     ui->label_gpu_4->setText(text[3]);
     ui->label_gpu_5->setText(text[4]);
     ui->label_gpu_6->setText(text[5]);
-
-
-
-
-
-
-
-
 }
 
 GPU_window::~GPU_window()
 {
     delete ui;
+}
+
+void GPU_window::on_pushButton_gpu_clicked()
+{
+    carrinho += gpu_lista[0].price;
+    QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
+    ui->label_carrinho->setText(carrinho_text);
+}
+
+void GPU_window::on_pushButton_gpu2_clicked()
+{
+    carrinho += gpu_lista[1].price;
+    QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
+    ui->label_carrinho->setText(carrinho_text);
+}
+
+void GPU_window::on_pushButton_gpu3_clicked()
+{
+    carrinho += gpu_lista[2].price;
+    QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
+    ui->label_carrinho->setText(carrinho_text);
+}
+
+void GPU_window::on_pushButton_gpu4_clicked()
+{
+    carrinho += gpu_lista[3].price;
+    QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
+    ui->label_carrinho->setText(carrinho_text);
+}
+
+void GPU_window::on_pushButton_gpu5_clicked()
+{
+    carrinho += gpu_lista[4].price;
+    QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
+    ui->label_carrinho->setText(carrinho_text);
+}
+
+void GPU_window::on_pushButton_gpu6_clicked()
+{
+    carrinho += gpu_lista[5].price;
+    QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
+    ui->label_carrinho->setText(carrinho_text);
 }
