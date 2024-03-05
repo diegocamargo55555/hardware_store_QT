@@ -5,6 +5,8 @@
 #include <QFile>
 
 lista_de_produtos processores_list[9];
+QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
+
 
 cpu_window::cpu_window(QWidget *parent)
     : QDialog(parent)
@@ -104,7 +106,7 @@ cpu_window::cpu_window(QWidget *parent)
     ui->label_9->setText(text[7]);
     ui->label_10->setText(text[8]);
 
-
+    ui->label_carrinho->setText(carrinho_text);
 }
 
 cpu_window::~cpu_window()
@@ -174,4 +176,3 @@ void cpu_window::on_pushButton_9_clicked()
     QString carrinho_text = QStringLiteral("carrinho R$: %1").arg(carrinho);
     ui->label_carrinho->setText(carrinho_text);
 }
-

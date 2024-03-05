@@ -4,7 +4,6 @@
 #include <QFile>
 #include <QApplication>
 
-
 struct lista_de_produtos
 {
     float price;
@@ -45,10 +44,4 @@ void bubble_sort_decrescente(lista_de_produtos a[], int total, QVector< QVector<
 }
 
 
-
-
-
-
-
 #endif // DATA_H
-

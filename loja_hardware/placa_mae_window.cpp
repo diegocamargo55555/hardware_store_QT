@@ -26,7 +26,7 @@ placa_mae_window::placa_mae_window(QWidget *parent)
     for (int i = 0; i < pixmap_array_placamae.size(); i++)
     {
         pixmap_array_placamae[i].resize(10);
-    }//pushButton_placa_mae
+    }
 
     pixmap_array_placamae[0][0] = QPixmap("/home/diego/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/placamae/a520.jpg");
     pixmap_array_placamae[0][1] = QPixmap("/home/diego/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/placamae/x570.jpg");
