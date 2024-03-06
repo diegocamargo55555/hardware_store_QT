@@ -5,16 +5,17 @@
 
 lista_de_produtos placa_mae[4];
 
-float price[4] = {395.99, 2199.99, 1739.99, 599.99};
-float *p_price;
-
-
-
 placa_mae_window::placa_mae_window(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::placa_mae_window)
 {
     ui->setupUi(this);
+
+    float *p_price = new float[99];
+    p_price[0] = 395.99;
+    p_price[1] = 2199.99;
+    p_price[2] = 1739.99;
+    p_price[3] = 599.99;
 
     placa_mae[0].price =395.99;
     placa_mae[1].price =2199.99;
@@ -60,7 +61,9 @@ placa_mae_window::placa_mae_window(QWidget *parent)
     QStringList text;
 
     for (int i = 0; i < 4; i++) {
-        text << QString(" %1 \n R$ %2.").arg(placa_mae[i].name, QString::number(*(p_price + i)));
+        int j = 0;
+        text << QString(" %1 \n R$ %2.").arg(placa_mae[i].name, QString::number(*(p_price + j)));
+        j += 4;
     }
     ui->labelplacamae->setText(text[0]);
     ui->labelplacamae_2->setText(text[1]);
