@@ -33,6 +33,7 @@ public:
     QLabel *label_gpu_4;
     QLabel *label_gpu_5;
     QLabel *label_gpu_6;
+    QLabel *label_carrinho;
 
     void setupUi(QDialog *GPU_window)
     {
@@ -41,7 +42,7 @@ public:
         GPU_window->resize(1337, 773);
         label = new QLabel(GPU_window);
         label->setObjectName("label");
-        label->setGeometry(QRect(520, 30, 171, 41));
+        label->setGeometry(QRect(520, 0, 171, 41));
         pushButton_gpu = new QPushButton(GPU_window);
         pushButton_gpu->setObjectName("pushButton_gpu");
         pushButton_gpu->setGeometry(QRect(10, 60, 421, 291));
@@ -78,6 +79,9 @@ public:
         label_gpu_6 = new QLabel(GPU_window);
         label_gpu_6->setObjectName("label_gpu_6");
         label_gpu_6->setGeometry(QRect(890, 730, 411, 41));
+        label_carrinho = new QLabel(GPU_window);
+        label_carrinho->setObjectName("label_carrinho");
+        label_carrinho->setGeometry(QRect(800, 10, 321, 41));
 
         retranslateUi(GPU_window);
 
@@ -100,6 +104,7 @@ public:
         label_gpu_4->setText(QCoreApplication::translate("GPU_window", "TextLabel", nullptr));
         label_gpu_5->setText(QCoreApplication::translate("GPU_window", "TextLabel", nullptr));
         label_gpu_6->setText(QCoreApplication::translate("GPU_window", "TextLabel", nullptr));
+        label_carrinho->setText(QCoreApplication::translate("GPU_window", "carrinho R$ ", nullptr));
     } // retranslateUi
 
 };

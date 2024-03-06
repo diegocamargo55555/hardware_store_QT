@@ -34,7 +34,7 @@ fonte_window::fonte_window(QWidget *parent)
     pixmap_array_fonte[0][2] = QPixmap("//home/diego/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/fontes/AEROCOOL KCAS FULL RANGE, 700W.jpg");
     pixmap_array_fonte[0][3] = QPixmap("/home/diego/Documents/git/universidade/hardware_store_QT/loja_hardware/imagens/fontes/GAMDIAS HELIOS P2-850G, 850W.jpg");
 
-    bubble_decrescente(fontes, 4, pixmap_array_fonte);
+    bubble_r(fontes, 4, pixmap_array_fonte);
 
     QIcon ButtonIconfonte(pixmap_array_fonte[0][0]);
     ui->pushButton_fontes->setIcon(ButtonIconfonte);
