@@ -2,7 +2,7 @@
 #include "ui_placa_mae_window.h"
 #include "data_placa.h"
 #include "global.h"
-
+#include <assert.h>
 lista_de_produtos placa_mae[4];
 
 placa_mae_window::placa_mae_window(QWidget *parent)
@@ -11,7 +11,7 @@ placa_mae_window::placa_mae_window(QWidget *parent)
 {
     ui->setupUi(this);
 
-    float *p_price = new float[99];
+    float *p_price = new float[4];
     p_price[0] = 395.99;
     p_price[1] = 2199.99;
     p_price[2] = 1739.99;
@@ -41,6 +41,15 @@ placa_mae_window::placa_mae_window(QWidget *parent)
 
     bubble_sort_crescente(placa_mae, 4, pixmap_array_placamae);
 
+    p_price[0] = placa_mae[0].price;
+    p_price[1] = placa_mae[1].price;
+    p_price[2] = placa_mae[2].price;
+    p_price[3] = placa_mae[3].price;
+
+    for (int i = 0; i < 3; ++i) {
+        assert(placa_mae[i].price >= placa_mae[i+1].price);
+    }
+
 
     QIcon ButtonIconplacamae(pixmap_array_placamae[0][0]);
     ui->pushButton_placa_mae->setIcon(ButtonIconplacamae);
@@ -60,9 +69,9 @@ placa_mae_window::placa_mae_window(QWidget *parent)
 
     QStringList text;
 
+    int j = 0;
     for (int i = 0; i < 4; i++) {
-        int j = 0;
-        text << QString(" %1 \n R$ %2.").arg(placa_mae[i].name, QString::number(*(p_price + j)));
+        text << QString(" %1 \n R$ %2.").arg(placa_mae[i].name, QString::number(*(p_price + i)));
         j += 4;
     }
     ui->labelplacamae->setText(text[0]);
